@@ -49,18 +49,18 @@ import { projects } from "@cv"
 <style>
   ul {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 1rem;
-    margin-inline: -16px;
+    margin-inline: 6px;
   }
 
   article {
     border-radius: 8px;
     border: 1px solid #f2f2f2;
-    gap: 12px;
+    gap: 2px;
     display: flex;
     flex-direction: column;
-    padding: 16px;
+    padding: 8px;
     height: 100%;
   }
 
@@ -138,9 +138,8 @@ import { projects } from "@cv"
 
     article {
       border: none;
-      box-shadow: 0 1px 1px #f2f2f2;
-      padding: 0 0 16px 0;
-    }
+      border: 1px solid #f2f2f2;
+      }
   }
 
   @media print {
