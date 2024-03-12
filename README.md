@@ -1,7 +1,7 @@
 
 
 <div align="center">
-<img src="logo.png" height="90px" width="auto" /> 
+<img src="logo.png" height="50px" width="auto" /> 
 <h2>
     <em>Résumé</em> minimalista maquetado para web y pdf
 </h2>
@@ -18,7 +18,6 @@ Basado en el diseño de <a href="https://github.com/BartoszJarocki/cv">Bartosz J
 
 ## 🔑 Licencia
 
-[MIT](LICENSE.txt) - Creado por [**midudev**](https://midu.dev).
-
+[MIT](LICENSE.txt) 
 
 
