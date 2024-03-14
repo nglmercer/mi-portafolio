@@ -221,6 +221,7 @@
   "projects": [
     {
       "name": "twitchTTS",
+      "iframeUrl": "img:https://github.com/nglmercer/Twitch-MineTTS/assets/128845117/a8a4392e-e656-4b08-a544-89b6b4418a91",
       "isActive": true,
       "description": "Speech Chat con varias opciones adicionales como un filtro de usuarios , opciones personalizables, soporta aplicaciones juegos interactivos en Live. Web Online.",
       "highlights": [
@@ -232,6 +233,7 @@
     },
     {
       "name": "Tiktok Interactive Live",
+      "iframeUrl": "img:https://github.com/nglmercer/Tiktok-twitch-tts-mixitup-v2/assets/128845117/e9a72c41-75f9-4c3e-b859-0be289159720",
       "isActive": true,
       "description": "Herramienta multifuncional sonidos, alertas, ovelay, mixitupp API, juegos y live interactivo. Gestion de guardado de Datos e informacion local avanzada de usuario. ",
       "highlights": [
@@ -243,6 +245,7 @@
     },
     {
       "name": "Creacion de contenido desafiante",
+      "iframeUrl": "https://www.youtube.com/embed/AO4H2EZT9VE",
       "isActive": true,
       "description": "Experimentacion, innovacion en nuevas maneras de comunicar entrener y asombrar al publico, creacion de nuevas formulas de contenido.",
       "highlights": [
@@ -253,17 +256,19 @@
     },
     {
       "name": "Comunidad colaborativa",
+      "iframeUrl": "https://www.youtube.com/embed/QbgJ_tDeEFU",
       "isActive": true,
       "description": "Desarrolle mi plataforma con amplia red de conocimiento, conexion y colaboracion con personas de alta calidad que apoyan y aportan constantemente,",
       "highlights": [
         "10k visitas al mes",
         "Desarrollado por la comunidad"
       ],
-      "url": "https://codi.link",
-      "github": "https://github.com/midudev/codi.link"
+      "url": "https://discord.com/invite/zFQzPUCDj4",
+      "github": "https://github.com/nglmercer"
     },
     {
       "name": "GitHub APP Documentacion",
+      "iframeUrl": "img:https://github.com/nglmercer/Tiktok-twitch-tts-mixitup-v2/assets/128845117/e9a72c41-75f9-4c3e-b859-0be289159720",
       "isActive": true,
       "description": "Documentacion avanzada con creacion avanzada de libreria de datos y conocimientos mostrados de una API desarrollada por mi equipo.",
       "highlights": [
@@ -275,12 +280,13 @@
     },
     {
       "name": "Plataforma de soporte constante",
+      "iframeUrl": "img:https://github.com/nglmercer/nglmercer/assets/128845117/b76b08d0-5038-401b-acc1-c651c3c0f2c2",
       "description": "Creacion de una plataforma de soporte amplio y rapido donde la comunicacion es constante y rapido.",
       "highlights": [
         "+99% soporte y solucion continua.",
         "+50% mas rapido y confiable"
       ],
-      "url": "https://miduconf.com"
+      "url": "https://linktr.ee/melsern?ltsid=b2b4fa34-2a0e-421b-91d8-5d24131136b9"
     }
   ]
 }

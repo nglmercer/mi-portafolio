@@ -9,7 +9,11 @@ import { projects } from "@cv"
   <ul>
     {
       projects.map(
-        ({ url, description, highlights, name, isActive, github }) => {
+        ({ url, description, highlights, name, isActive, github, iframeUrl }) => {
+          // Verifica si iframeUrl comienza con "img:"
+          const isImage = iframeUrl.startsWith('img:');
+          const hasContent = iframeUrl !== '';
+
           return (
             <li>
               <article>
@@ -32,6 +36,14 @@ import { projects } from "@cv"
                   </h3>
                   <p>{description}</p>
                 </header>
+                {/* Utiliza expresión condicional para renderizar img o iframe */}
+                {hasContent && (
+                  isImage ? (
+                    <img src={iframeUrl.substring(4)} alt={name} />
+                  ) : (
+                    <iframe src={iframeUrl}></iframe>
+                  )
+                )}
                 <footer>
                   {highlights.map((highlight) => {
                     return <span>{highlight}</span>
@@ -46,6 +58,7 @@ import { projects } from "@cv"
   </ul>
 </Section>
 
+
 <style>
   ul {
     display: grid;
@@ -53,7 +66,15 @@ import { projects } from "@cv"
     gap: 1rem;
     margin-inline: 6px;
   }
-
+  img {
+    max-height: 240px;
+  }
+  img,
+  iframe {
+    display: flex;
+    border: none;
+    height: 250px;
+  }
   article {
     border-radius: 8px;
     border: 1px solid #f2f2f2;
