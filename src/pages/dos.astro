@@ -1,0 +1,239 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Carousel from "@/components/Carousel.astro";
+import { ViewTransitions, slide } from "astro:transitions";
+---
+
+<Layout title="Videos Editados">
+  <script src="https://kit.fontawesome.com/887a835504.js" crossorigin="anonymous"></script>
+
+  <body >
+      <div class="carrousel">
+          <div class="conteCarrousel">
+              <div class="itemCarrousel" id="itemCarrousel-1">
+                  <div class="itemCarrouselTarjeta">
+                    
+                    <iframe src="https://www.youtube.com/embed/MZn40uyHcOo"></iframe>
+                  </div>
+                  <div class="itemCarrouselArrows">
+                      <a href="#itemCarrousel-3">
+                          <i class="fas fa-chevron-left"></i>
+                      </a>
+                      <a href="#itemCarrousel-2">
+                          <i class="fas fa-chevron-right"></i>
+                      </a>
+                  </div>
+              </div>
+              <div class="itemCarrousel" id="itemCarrousel-2">
+                  <div class="itemCarrouselTarjeta">
+                    <iframe src="https://www.youtube.com/shorts/7xqntUyho8Y"></iframe>
+                  </div>
+  
+                  <div class="itemCarrouselArrows">
+                      <a href="#itemCarrousel-1">
+                          <i class="fas fa-chevron-left"></i>
+                      </a>
+                      <a href="#itemCarrousel-3">
+                          <i class="fas fa-chevron-right"></i>
+                      </a>
+                  </div>
+              </div>
+              <div class="itemCarrousel" id="itemCarrousel-3">
+                  <div class="itemCarrouselTarjeta">                
+                    <iframe src="https://www.youtube.com/embed/QbgJ_tDeEFU"></iframe>
+                  </div>
+  
+                  <div class="itemCarrouselArrows">
+                      <a href="#itemCarrousel-2">
+                          <i class="fas fa-chevron-left"></i>
+                      </a>
+                      <a href="#itemCarrousel-1">
+                          <i class="fas fa-chevron-right"></i>
+                      </a>
+                  </div>
+              </div>
+          </div>
+          <div class="conteCarrouselController">
+              <a href="#itemCarrousel-1">1</a>
+              <a href="#itemCarrousel-2">2</a>
+              <a href="#itemCarrousel-3">3</a>
+          </div>
+        </body>
+</Layout>
+
+
+<style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      background: linear-gradient(45deg, #ff0080, #00ffc8, #8400ff, #ff5100);
+      background-size: 400% 400%;
+      animation: gradientAnimation 15s ease infinite;
+    }
+    @keyframes gradientAnimation {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+.carrousel{
+    margin: 20px 20px;
+    width: 98%;
+    height: 95svh;
+}
+.itemCarrousel.active {
+      transform: translateX(0); /* Show the active item */
+    }
+
+    .itemCarrousel.inactive {
+      transform: translateX(-100%); /* Slide inactive items off-screen (left) */
+      transition-delay: 2s; /* Delay transitions for visual effect */
+    }
+
+    .itemCarrousel.inactive:nth-child(2) {
+      transform: translateX(100%); /* Slide inactive items off-screen (right) */
+    }
+.conteCarrousel{
+    width: 100%;
+    height: 90%;
+    overflow: hidden;
+    transition: transform 2s ease-in-out; /* Transition for smooth sliding */
+}
+iframe {
+  background-color: transparent;
+  z-index: 10;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+.itemCarrousel{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    flex: 0 0 100%;
+}
+
+.itemCarrouselTarjeta{
+    width: 100%;
+    height: 100%;
+}
+@media (width <= 1250px) {
+  iframe {
+    background-color: transparent;
+    z-index: 10;
+    display: flex;
+    width: 100%;
+    min-height: 100%;
+    height: max-content;
+    box-sizing: border-box;
+  }
+  .carrousel{
+    margin: 0px 0px;
+    width: 100%;
+    height: 60svh;
+}
+}
+
+.itemCarrouselArrows {
+  z-index: 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%; 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px; 
+}
+
+.itemCarrouselArrows > i:hover {
+    cursor: pointer;
+}
+.itemCarrousel .itemCarrouselArrows {
+    pointer-events: none; /* Deshabilitar eventos de puntero enlaces dentro de .itemCarrousel */
+}
+.itemCarrousel .itemCarrouselArrows a{
+  pointer-events: auto; /* Deshabilitar eventos de puntero enlaces dentro de .itemCarrousel */
+}
+
+#itemCarrousel-1{
+    background-color: rgb(226, 50, 50);
+}
+
+#itemCarrousel-2{
+    background-color: rgb(50, 200, 226);
+}
+
+#itemCarrousel-3{
+    background-color: rgb(200, 226, 50);
+}
+
+.conteCarrouselController{
+    background: linear-gradient(45deg, #ed92ff23, #8f9aff1f, #ba85ec54, #9bd5fc25);
+    z-index: 10;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.conteCarrouselController > a{
+    z-index: 10;
+    text-decoration: none;
+    font-size: 5em;
+    color: grey;
+}
+a {
+  display: flex;
+  z-index: 10;
+  width: 75px;
+  justify-content: center;
+  align-items: center;
+  height: 75px;
+  border-radius: 50%;
+}
+a:hover {
+  margin-inline: 0px;
+  display: flex;
+  width: 75px;
+  justify-content: center;
+  align-items: center;
+  height: 75px;
+  border-radius: 50%;
+  background-color: #ff00c8a1;
+}
+.itemCarrouselArrows > a > i{
+    color: white;
+}
+  .container {
+    display: block;
+    width: 100dvb;
+    height: 100dvb;
+  }
+  main {
+    background: #7dc5f1;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  main div {
+    font-size: 100px;
+    font-weight: bold;
+  }
+  nav {
+    position: absolute;
+    top: 0;
+  }
+</style>

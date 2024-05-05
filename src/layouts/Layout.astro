@@ -1,9 +1,13 @@
 ---
 import { basics } from "@cv"
 
+import Menu from "@/components/Menu.astro";
+import Footer from "@/components/Footer.astro";
 interface Props {
-  title: string
+  title: string;
 }
+import { ViewTransitions, slide } from "astro:transitions";
+
 
 const { title } = Astro.props
 
@@ -11,31 +15,19 @@ const { image, summary, url } = basics
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang="en" transition:animate={slide({ duration: "1s" })}>
+  <ViewTransitions />
   <head>
     <meta charset="UTF-8" />
-    <title>{title}</title>
-    <meta name="description" content={summary} />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="preload" as="image" href={image} />
+    <meta name="generator" content={Astro.generator} >
 
-    <meta property="og:url" content={url} />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={summary} />
-    <meta property="og:image" content="" />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta property="twitter:domain" content={url.split("//")[1] ?? ''} />
-    <meta property="twitter:url" content={url} />
-    <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={summary} />
-    <meta name="twitter:image" content="" />
+    <Menu class="no-print"/>
+    <Footer class="no-print"/>
   </head>
-  <body>
     <slot />
-  </body>
+    <body>
+    </body>
 </html>
 
 <style is:global>
@@ -47,7 +39,6 @@ const { image, summary, url } = basics
       "Courier New",
       Courier,
       monospace;
-    background: #fff;
     letter-spacing: -0.025rem;
   }
 

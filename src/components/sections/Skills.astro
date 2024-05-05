@@ -16,6 +16,18 @@ import Swift from "@/icons/swift.astro"
 import SwiftUI from "@/icons/swiftui.astro"
 import Kotlin from "@/icons/kotlin.astro"
 import Flutter from "@/icons/flutter.astro"
+interface Props {
+  title?: string | undefined
+  description?: string | undefined
+  ogImage?: URL | undefined
+}
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site)
+
+if (Astro.props.ogImage === undefined) {
+  Astro.props.ogImage = new URL('og-image.png', canonicalURL)
+}
+
 
 const SKILLS_ICONS: Record<string, any> = {
   HTML,

@@ -10,7 +10,6 @@ import Youtube from "@/icons/Youtube.astro"
 import GitHub from "@/icons/GitHub.astro"
 import WorldMap from "@/icons/WorldMap.astro"
 import type { SocialIcon } from "@/types"
-import ThemeIcon from '@/components/ThemeIcon.astro';
 
 
 const { name, label, image, location, profiles, phone, email } = basics
@@ -88,7 +87,6 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
     <figure>
       <img src={image} alt={name} />
     </figure>
-    <ThemeIcon />
   
   </div>
 
@@ -100,7 +98,6 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    gap: 0.5rem;
   }
 
   .info {
@@ -123,7 +120,7 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
   }
   h2 {
     font-size: 1.3rem;
-    text-wrap: align-self: start;;
+    align-self: start;
   }
 
   img {
