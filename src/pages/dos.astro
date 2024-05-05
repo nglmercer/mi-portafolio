@@ -2,62 +2,80 @@
 import Layout from "@/layouts/Layout.astro";
 import Carousel from "@/components/Carousel.astro";
 import { ViewTransitions, slide } from "astro:transitions";
+import Luxor10Channel from "@/icons/luxor10channel.astro";
+import NaunchiChannel from "@/icons/naunchiChannel.astro";
 ---
 
 <Layout title="Videos Editados">
   <script src="https://kit.fontawesome.com/887a835504.js" crossorigin="anonymous"></script>
 
   <body >
-      <div class="carrousel">
-          <div class="conteCarrousel">
-              <div class="itemCarrousel" id="itemCarrousel-1">
-                  <div class="itemCarrouselTarjeta">
-                    
-                    <iframe src="https://www.youtube.com/embed/MZn40uyHcOo"></iframe>
-                  </div>
-                  <div class="itemCarrouselArrows">
-                      <a href="#itemCarrousel-3">
-                          <i class="fas fa-chevron-left"></i>
-                      </a>
-                      <a href="#itemCarrousel-2">
-                          <i class="fas fa-chevron-right"></i>
-                      </a>
-                  </div>
-              </div>
-              <div class="itemCarrousel" id="itemCarrousel-2">
-                  <div class="itemCarrouselTarjeta">
-                    <iframe src="https://www.youtube.com/shorts/7xqntUyho8Y"></iframe>
-                  </div>
-  
-                  <div class="itemCarrouselArrows">
-                      <a href="#itemCarrousel-1">
-                          <i class="fas fa-chevron-left"></i>
-                      </a>
-                      <a href="#itemCarrousel-3">
-                          <i class="fas fa-chevron-right"></i>
-                      </a>
-                  </div>
-              </div>
-              <div class="itemCarrousel" id="itemCarrousel-3">
-                  <div class="itemCarrouselTarjeta">                
-                    <iframe src="https://www.youtube.com/embed/QbgJ_tDeEFU"></iframe>
-                  </div>
-  
-                  <div class="itemCarrouselArrows">
-                      <a href="#itemCarrousel-2">
-                          <i class="fas fa-chevron-left"></i>
-                      </a>
-                      <a href="#itemCarrousel-1">
-                          <i class="fas fa-chevron-right"></i>
-                      </a>
-                  </div>
-              </div>
-          </div>
-          <div class="conteCarrouselController">
-              <a href="#itemCarrousel-1">1</a>
-              <a href="#itemCarrousel-2">2</a>
-              <a href="#itemCarrousel-3">3</a>
-          </div>
+    <div class="relative h-screen w-dvw p-4 gap-4 mt-8" id="app">
+      <div class="[grid-area-aside] flex-col flex overflow-y-auto">
+        <div class="bg-gray-500/75 w-full h-full border-x-cyan-500 rounded-md p-2">
+          <ul class="absolute text-purple-700 left-10 top-2/4 justify-items-center justify-center text-6xl font-extrabold">
+            Canales
+          </ul>
+          <ul class="flex justify-items-center align-middle items-center text-2xl text-wrap">
+            <Luxor10Channel /> Luxor10
+          </ul>
+          <ul class="flex justify-items-center align-middle items-center text-2xl text-wrap">
+            <NaunchiChannel />Naunchi
+          </ul>
+        </div>
+         </div>
+      <div class="[grid-area:main]">
+        <div class="conteCarrousel">
+            <div class="itemCarrousel" id="itemCarrousel-1">
+                <div class="itemCarrouselTarjeta">
+                  
+                  <iframe src="https://www.youtube.com/embed/MZn40uyHcOo"></iframe>
+                </div>
+                <div class="itemCarrouselArrows">
+                    <a href="#itemCarrousel-3">
+                        <i class="fas fa-chevron-left"></i>
+                    </a>
+                    <a href="#itemCarrousel-2">
+                        <i class="fas fa-chevron-right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="itemCarrousel" id="itemCarrousel-2">
+                <div class="itemCarrouselTarjeta">
+                  <iframe src="https://www.youtube.com/embed/l5uj7x3muVE"></iframe>
+                </div>
+
+                <div class="itemCarrouselArrows">
+                    <a href="#itemCarrousel-1">
+                        <i class="fas fa-chevron-left"></i>
+                    </a>
+                    <a href="#itemCarrousel-3">
+                        <i class="fas fa-chevron-right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="itemCarrousel" id="itemCarrousel-3">
+                <div class="itemCarrouselTarjeta">                
+                  <iframe src="https://www.youtube.com/embed/QbgJ_tDeEFU"></iframe>
+                </div>
+
+                <div class="itemCarrouselArrows">
+                    <a href="#itemCarrousel-2">
+                        <i class="fas fa-chevron-left"></i>
+                    </a>
+                    <a href="#itemCarrousel-1">
+                        <i class="fas fa-chevron-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="conteCarrouselController">
+            <a href="#itemCarrousel-1">1</a>
+            <a href="#itemCarrousel-2">2</a>
+            <a href="#itemCarrousel-3">3</a>
+        </div>
+    </div>
+
         </body>
 </Layout>
 
@@ -85,9 +103,33 @@ import { ViewTransitions, slide } from "astro:transitions";
     }
 .carrousel{
     margin: 20px 20px;
-    width: 98%;
+    width: 100dvh;
     height: 95svh;
 }
+#app {
+  display: grid;
+  grid-template-areas: 
+    "aside main main"
+    "player player player";
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-rows: 1fr auto;
+}
+@media (width <= 800px) {
+  body {
+    padding: 0;
+    margin: 0;
+  }
+  #app {
+    /* Cambiar a un diseño de una sola columna */
+    grid-template-areas: 
+      "aside"
+      "main"
+      "player";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+  }
+}
+Con esta config
 .itemCarrousel.active {
       transform: translateX(0); /* Show the active item */
     }
@@ -125,7 +167,7 @@ iframe {
     width: 100%;
     height: 100%;
 }
-@media (width <= 1250px) {
+/* @media (width <= 650px) {
   iframe {
     background-color: transparent;
     z-index: 10;
@@ -140,7 +182,7 @@ iframe {
     width: 100%;
     height: 60svh;
 }
-}
+} */
 
 .itemCarrouselArrows {
   z-index: 0;
